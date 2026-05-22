@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:content": "tsx scripts/check-content.ts"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "motion": "^12.40.0",
     "next": "16.2.6",
     "react": "19.2.4",
@@ -23,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
+    "tsx": "^4.22.3",
     "typescript": "^5"
   }
 }
