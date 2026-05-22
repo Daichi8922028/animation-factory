@@ -20,6 +20,9 @@
 # production
 /build
 
+# generated animation previews (built from content/animations/*.animation.md)
+/previews/
+
 # misc
 .DS_Store
 *.pem

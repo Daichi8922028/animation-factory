@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# animation factory
 
-## Getting Started
+React 開発者向けの「アニメーションのカタログ」。あらゆる UI アニメーションを視覚的に試して、`.md` パッケージとして取得し、AI に渡してそのまま実装させられる無料サイト。
 
-First, run the development server:
+> 売上目的ではなく、自分が本当に欲しいアニメーションを誰でも使える形にするための個人発プロジェクト。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 設計ドキュメント（真正本）
+
+設計の真正本は Obsidian の Vault 側にある。実装で迷ったらそちらを読む。
+
+- ProjectBrief — アイデア本体・スコープ
+- Roadmap — Phase 0〜4 の作業フロー
+- Web-Animation-Taxonomy — アニメーションの MECE 5 軸
+- Specs/animation-md-schema — `.animation.md` スキーマ v1.0（確定）
+- Specs/react-implementability — アルファ/ベータ振り分け
+- Specs/site-ia — サイト IA / データモデル
+- Specs/ui-design — UI・ビジュアル設計
+- Specs/preview-engine — プレビュー基盤の技術選定
+- Specs/implementation-plan — 本リポジトリの進め方
+
+Vault: `10_Projects/アニメーション工場/`
+
+## 技術スタック
+
+- Next.js（App Router）+ TypeScript
+- Tailwind CSS
+- Motion（アニメーション）
+- Zod（`.animation.md` フロントマターの検証）
+- ホスティング: Vercel 無料枠
+
+## 構成
+
+```
+src/                  Next.js アプリ（App Router）
+content/animations/   本番の *.animation.md（アニメーション 1 件 = 1 ファイル）
+scripts/              .animation.md → 索引・プレビューのビルド（予定）
+previews/             生成されたプレビュー（git 管理外）
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 開発
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev      # 開発サーバ
+npm run build    # 本番ビルド
+npm run lint     # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ステータス
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Phase 2（アルファ版）実装の初期。現在はリポジトリ scaffold と設計サンプル 3 本（`content/animations/`）まで。
