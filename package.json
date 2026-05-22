@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "npm run build:index",
     "dev": "next dev",
+    "prebuild": "npm run build:index",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:content": "tsx scripts/check-content.ts"
+    "check:content": "tsx scripts/check-content.ts",
+    "build:index": "tsx scripts/build-index.ts"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

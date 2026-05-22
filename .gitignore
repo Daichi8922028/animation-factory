@@ -23,6 +23,9 @@
 # generated animation previews (built from content/animations/*.animation.md)
 /previews/
 
+# generated catalog index (built by `npm run build:index`)
+/src/generated/
+
 # misc
 .DS_Store
 *.pem
