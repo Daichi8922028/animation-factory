@@ -1,4 +1,4 @@
-import styles from "./HoverLiftDemo.module.css";
+import styles from "@/components/effects/hover-lift.module.css";
 
 /**
  * hover-lift の Tier 1（Vanilla CSS）プレビュー。CSS Module でカプセル化。

@@ -1,12 +1,17 @@
 import Link from "next/link";
 import type { AnimationSummary } from "@/lib/catalog";
+import hoverLift from "@/components/effects/hover-lift.module.css";
 
-/** アニメーション 1 件のカード表示。home / category 一覧で共通。 */
+/**
+ * アニメーション 1 件のカード表示。home / category 一覧で共通。
+ * カード自体に hover-lift（自前カタログの動き）を適用＝ドッグフーディング
+ * （[[ui-design]] §0 / §5）。
+ */
 export function AnimationCard({ a }: { a: AnimationSummary }) {
   return (
     <Link
       href={`/a/${a.id}`}
-      className="block rounded-xl border border-white/10 bg-white/5 p-5 transition-colors hover:bg-white/10"
+      className={`${hoverLift.card} block rounded-xl border border-white/10 bg-white/5 p-5`}
     >
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="text-lg text-zinc-100">{a.name}</h3>

@@ -1,4 +1,6 @@
-/* hover-lift Tier 1（Vanilla CSS）を CSS Module 化したもの。
+/* hover-lift 効果（共有 CSS Module）。
+   元: content/animations/hover-lift.animation.md の Tier 1 実装。
+   サイト本体（AnimationCard など）も同じ効果を使う＝ドッグフーディング。
    擬似要素 opacity 補間で box-shadow を GPU 内に収める。 */
 
 .card {
