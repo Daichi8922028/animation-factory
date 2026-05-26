@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { loadCatalogIndex } from "@/lib/catalog";
+import { AnimationCard } from "@/components/AnimationCard";
 
 /**
  * / — ホーム（Phase 2 プロト）。
- * 現状はアニメ一覧のミニマル表示。カテゴリブラウズ・検索・ヒーローは Phase 2 後半で。
+ * カテゴリ入口 + 全アニメ一覧のミニマル表示。ヒーロー / 検索 / UI 仕上げは step 7・8 で。
  */
 export default function Home() {
   const index = loadCatalogIndex();
@@ -20,9 +21,32 @@ export default function Home() {
           アニメーションを視覚的に試して、.md として取得し、AI に渡してそのまま実装させられるカタログ。
         </p>
         <p className="mt-2 text-xs text-zinc-500">
-          {index.animations.length} 件 · {populated.length} カテゴリ ·{" "}
-          schema v{index.schemaVersion}
+          {index.animations.length} 件 · {populated.length} カテゴリ · schema v
+          {index.schemaVersion}
         </p>
+
+        <section className="mt-12">
+          <h2 className="text-xs uppercase tracking-wider text-zinc-500">
+            categories
+          </h2>
+          <ul className="mt-4 grid gap-2 sm:grid-cols-3">
+            {index.categories.map((c) => (
+              <li key={c.id}>
+                <Link
+                  href={`/c/${c.id}`}
+                  className={`flex items-baseline justify-between rounded-lg border border-white/10 px-4 py-3 text-sm transition-colors ${
+                    c.count > 0
+                      ? "bg-white/5 hover:bg-white/10 text-zinc-100"
+                      : "bg-transparent text-zinc-500 hover:bg-white/5"
+                  }`}
+                >
+                  <span>{c.label}</span>
+                  <span className="text-xs text-zinc-500">{c.count}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section className="mt-12">
           <h2 className="text-xs uppercase tracking-wider text-zinc-500">
@@ -31,29 +55,7 @@ export default function Home() {
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">
             {index.animations.map((a) => (
               <li key={a.id}>
-                <Link
-                  href={`/a/${a.id}`}
-                  className="block rounded-xl border border-white/10 bg-white/5 p-5 transition-colors hover:bg-white/10"
-                >
-                  <div className="flex items-baseline justify-between gap-3">
-                    <h3 className="text-lg text-zinc-100">{a.name}</h3>
-                    <span
-                      className={`text-[10px] uppercase tracking-wider rounded-full border px-2 py-0.5 ${
-                        a.release === "alpha"
-                          ? "border-emerald-500/30 text-emerald-300 bg-emerald-500/10"
-                          : "border-amber-500/30 text-amber-300 bg-amber-500/10"
-                      }`}
-                    >
-                      {a.release}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-zinc-500">
-                    {a.category} · {a.lifecycle} · {a.triggerPrimary}
-                  </p>
-                  <p className="mt-3 line-clamp-2 text-sm text-zinc-400">
-                    {a.description}
-                  </p>
-                </Link>
+                <AnimationCard a={a} />
               </li>
             ))}
           </ul>
