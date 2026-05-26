@@ -4,6 +4,7 @@ import path from "node:path";
 import Link from "next/link";
 import { loadCatalogIndex, type AnimationSummary } from "@/lib/catalog";
 import { CONTENT_DIR } from "@/lib/animations";
+import { ScrollReveal } from "@/components/effects/ScrollReveal";
 
 /**
  * /a/[id] — アニメーション詳細ページ。
@@ -67,7 +68,7 @@ export default async function AnimationDetailPage({
           />
         </section>
 
-        <section className="mt-10 grid md:grid-cols-2 gap-6">
+        <ScrollReveal as="section" className="mt-10 grid md:grid-cols-2 gap-6">
           <MetaCard title="taxonomy">
             <Kv
               k="role"
@@ -88,9 +89,9 @@ export default async function AnimationDetailPage({
             <Kv k="reduced-motion" v={a.reducedMotion ? "対応" : "未対応"} />
             <Kv k="tags" v={a.tags.join(" / ")} />
           </MetaCard>
-        </section>
+        </ScrollReveal>
 
-        <section className="mt-10">
+        <ScrollReveal as="section" className="mt-10">
           <h2 className="text-lg font-semibold mb-3">
             必要な環境（逆引き）
           </h2>
@@ -116,14 +117,14 @@ export default async function AnimationDetailPage({
               </tbody>
             </table>
           </div>
-        </section>
+        </ScrollReveal>
 
-        <section className="mt-10">
+        <ScrollReveal as="section" className="mt-10">
           <h2 className="text-lg font-semibold mb-3">.md 本文</h2>
           <pre className="rounded-xl border border-white/10 bg-black/40 p-4 text-xs text-zinc-300 overflow-x-auto whitespace-pre-wrap leading-relaxed">
 {body}
           </pre>
-        </section>
+        </ScrollReveal>
       </div>
     </main>
   );

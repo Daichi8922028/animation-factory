@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import styles from "./ScrollRevealDemo.module.css";
+import styles from "@/components/effects/scroll-reveal.module.css";
 
 /**
  * scroll-reveal の Tier 1（CSS Scroll-Driven）+ Tier 2（IO）デモ。

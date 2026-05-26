@@ -40,7 +40,7 @@ export function CatalogHome({
   return (
     <main className="flex-1 bg-zinc-950 text-zinc-100">
       <motion.section
-        className="border-b border-white/5"
+        className="relative overflow-hidden border-b border-edge"
         initial="hidden"
         animate="visible"
         variants={{
@@ -48,7 +48,12 @@ export function CatalogHome({
           visible: { transition: { staggerChildren: 0.08 } },
         }}
       >
-        <div className="max-w-5xl mx-auto px-6 py-20 sm:py-28">
+        {/* glow アクセント。動きを誘うサブリミナルな背景。 */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -top-40 left-1/2 h-[700px] w-[900px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl"
+        />
+        <div className="relative max-w-5xl mx-auto px-6 py-20 sm:py-28">
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.5, ease: "easeOut" }}

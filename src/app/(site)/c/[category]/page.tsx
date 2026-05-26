@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORIES, loadCatalogIndex } from "@/lib/catalog";
 import { AnimationCard } from "@/components/AnimationCard";
+import { ScrollReveal } from "@/components/effects/ScrollReveal";
 
 /**
  * /c/[category] — カテゴリ別アニメーション一覧。
@@ -86,9 +87,9 @@ export default async function CategoryPage({
         ) : (
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {items.map((a) => (
-              <li key={a.id}>
+              <ScrollReveal as="li" key={a.id}>
                 <AnimationCard a={a} />
-              </li>
+              </ScrollReveal>
             ))}
           </ul>
         )}
