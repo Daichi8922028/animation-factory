@@ -1,0 +1,44 @@
+/* scroll-reveal の Tier 1 + Tier 2 プログレッシブエンハンスメント。
+   Tier 1: CSS Scroll-Driven Animations（@supports で出し分け）
+   Tier 2: IntersectionObserver で 1 回 reveal に縮退 */
+
+@keyframes scroll-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: scroll-reveal linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 35%;
+  }
+}
+
+@supports not (animation-timeline: view()) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 500ms ease-out,
+      transform 500ms ease-out;
+  }
+  .reveal.isRevealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,47 @@
+/* hover-lift Tier 1（Vanilla CSS）を CSS Module 化したもの。
+   擬似要素 opacity 補間で box-shadow を GPU 内に収める。 */
+
+.card {
+  position: relative;
+  transition: transform 180ms ease-out;
+  will-change: transform;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-4px);
+  }
+  .card:hover::after {
+    opacity: 1;
+  }
+}
+
+.card:focus-visible {
+  transform: translateY(-4px);
+  outline: none;
+}
+.card:focus-visible::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after {
+    transition-duration: 0.01ms;
+  }
+  .card:hover,
+  .card:focus-visible {
+    transform: none;
+  }
+}
