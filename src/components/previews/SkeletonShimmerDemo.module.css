@@ -1,0 +1,29 @@
+/* skeleton-shimmer Tier 1（純 CSS）の CSS Module 化。 */
+
+@keyframes skeletonShimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.block {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: skeletonShimmer 1.4s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .block {
+    animation: none;
+    background: rgba(255, 255, 255, 0.06);
+  }
+}

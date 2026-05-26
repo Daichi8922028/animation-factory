@@ -1,0 +1,38 @@
+/* pulse-attention Tier 1（純 CSS）の CSS Module 化。
+   ::after で広がるリングを scale + opacity 0 へフェード。 */
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.dot {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #84cc16; /* lime-500 */
+  border-radius: 50%;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #84cc16;
+  animation: pulseRing 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot::after {
+    animation: none;
+    opacity: 0;
+  }
+}
