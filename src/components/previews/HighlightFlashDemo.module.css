@@ -1,0 +1,26 @@
+.target {
+  position: relative;
+  isolation: isolate;
+}
+.target::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(190, 242, 100, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+.isFlash::after {
+  animation: highlight-flash 1200ms ease-out forwards;
+}
+@keyframes highlight-flash {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  50%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .isFlash::after { animation: none; opacity: 0.5; }
+}

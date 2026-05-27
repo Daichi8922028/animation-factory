@@ -1,27 +1,54 @@
 @import "tailwindcss";
 
-/* ui-design §2 のビジュアル言語をデザイントークンに落としたもの。
-   ダークファースト（color-scheme: dark 固定）。 */
-@theme inline {
-  --color-base: #0a0a0b;
-  --color-raised: #15161a;
-  --color-preview-bg: #0c0d10;
-  --color-fg: #f4f4f5;
-  --color-muted: #a1a1aa;
-  --color-subtle: #71717a;
-  --color-edge: rgba(255, 255, 255, 0.08);
-  --color-edge-strong: rgba(255, 255, 255, 0.18);
+/* dark: バリアントを class ベース（[data-theme="dark"]）にバインド。
+   既定はライト、明示で [data-theme="dark"] のときダーク。 */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-  /* シングルアクセント。リリースバッジ(alpha/beta)は情報色として別扱い。 */
-  --color-accent: #84cc16;
-  --color-accent-soft: rgba(132, 204, 22, 0.16);
+/* ui-design §2 のビジュアル言語をデザイントークンに落としたもの。
+   `@theme`（inline ではない）にすることで、生成された utility は
+   var(--color-…) を参照 → [data-theme="dark"] で実行時にスワップできる。 */
+@theme {
+  /* ===== light（既定）===== */
+  --color-base: #ffffff;
+  --color-raised: #f4f4f5; /* zinc-100 */
+  --color-preview-bg: #f4f4f5;
+  --color-surface: rgba(0, 0, 0, 0.04);
+  --color-surface-strong: rgba(0, 0, 0, 0.08);
+  --color-overlay: #ffffff;
+  --color-fg: #18181b; /* zinc-900 */
+  --color-muted: #52525b; /* zinc-600 */
+  --color-subtle: #a1a1aa; /* zinc-400 */
+  --color-edge: rgba(0, 0, 0, 0.1);
+  --color-edge-strong: rgba(0, 0, 0, 0.2);
+
+  /* シングルアクセント。light では暗めの lime-600 にして白背景でも読める。 */
+  --color-accent: #65a30d;
+  --color-accent-soft: rgba(101, 163, 13, 0.14);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-html {
+/* ===== dark（明示オプトイン）===== */
+[data-theme="dark"] {
+  --color-base: #0a0a0b;
+  --color-raised: #15161a;
+  --color-preview-bg: #0c0d10;
+  --color-surface: rgba(255, 255, 255, 0.05);
+  --color-surface-strong: rgba(255, 255, 255, 0.1);
+  --color-overlay: #15161a;
+  --color-fg: #f4f4f5;
+  --color-muted: #a1a1aa;
+  --color-subtle: #71717a;
+  --color-edge: rgba(255, 255, 255, 0.08);
+  --color-edge-strong: rgba(255, 255, 255, 0.18);
+  --color-accent: #84cc16;
+  --color-accent-soft: rgba(132, 204, 22, 0.16);
   color-scheme: dark;
+}
+
+html {
+  color-scheme: light;
 }
 
 body {
@@ -30,6 +57,7 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 200ms ease, color 200ms ease;
 }
 
 ::selection {
@@ -37,9 +65,7 @@ body {
   color: var(--color-fg);
 }
 
-/* キーボード操作の既定フォーカス。
-   hover-lift など独自のフォーカス表現を持つ要素は CSS Module 側で
-   outline: none + 影に切り替えている。 */
+/* キーボード操作の既定フォーカス。 */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
@@ -55,4 +81,149 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* AnimationCard のプレビュー枠は常時 thumbnail を表示し、hover で iframe が上に重なる
+   構成に変わったため、旧 .hover-card-preview の @media (hover: hover) ガードは撤廃。 */
+
+/* ─────────────────────────────────────────────────────────────
+   Shiki デュアルテーマ: defaultColor:false で出力された CSS 変数を
+   data-theme に従って切り替える。
+   ───────────────────────────────────────────────────────────── */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+[data-theme="dark"] .shiki,
+[data-theme="dark"] .shiki span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Minimal prose: 詳細ページのレンダー済み Markdown 用。
+   Tailwind の typography プラグインを使わず、ここで必要分だけ定義。
+   ───────────────────────────────────────────────────────────── */
+.prose {
+  color: var(--color-fg);
+  line-height: 1.7;
+  font-size: 14px;
+}
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: var(--color-fg);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+.prose h1:first-child,
+.prose h2:first-child,
+.prose h3:first-child {
+  margin-top: 0;
+}
+.prose h1 {
+  font-size: 1.5rem;
+}
+.prose h2 {
+  font-size: 1.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--color-edge);
+}
+.prose h3 {
+  font-size: 1.05rem;
+}
+.prose h4 {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+.prose p {
+  margin: 0.8em 0;
+}
+.prose strong {
+  color: var(--color-fg);
+  font-weight: 600;
+}
+.prose em {
+  font-style: italic;
+}
+.prose a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--color-accent) 40%, transparent);
+  text-underline-offset: 2px;
+}
+.prose a:hover {
+  text-decoration-color: var(--color-accent);
+}
+.prose ul,
+.prose ol {
+  margin: 0.6em 0;
+  padding-left: 1.4em;
+}
+.prose li {
+  margin: 0.25em 0;
+}
+.prose ul li {
+  list-style: disc;
+}
+.prose ol li {
+  list-style: decimal;
+}
+.prose blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1em;
+  color: var(--color-muted);
+  margin: 1em 0;
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-edge);
+  margin: 2em 0;
+}
+.prose :not(pre) > code {
+  background: var(--color-surface-strong);
+  color: var(--color-fg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid var(--color-edge);
+}
+.prose pre {
+  margin: 1em 0;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-edge);
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+.prose .code-block {
+  position: relative;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+.prose th,
+.prose td {
+  border-bottom: 1px solid var(--color-edge);
+  padding: 0.5em 0.7em;
+  text-align: left;
+}
+.prose th {
+  font-weight: 600;
+  color: var(--color-fg);
+  background: var(--color-surface);
 }

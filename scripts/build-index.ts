@@ -79,6 +79,7 @@ function main() {
   const categories = CATEGORIES.map((c) => ({
     id: c.id as CategoryId,
     label: c.label,
+    description: c.description,
     count: summaries.filter((s) => s.category === c.id).length,
   }));
 
@@ -94,6 +95,8 @@ function main() {
     implementation: tally(
       summaries.flatMap((s) => s.implementations.map((i) => i.name)),
     ),
+    layer: tally(summaries.flatMap((s) => s.layers)),
+    media: tally(summaries.flatMap((s) => s.media)),
   };
 
   const index: CatalogIndex = {

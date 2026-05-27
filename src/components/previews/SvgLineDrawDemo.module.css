@@ -1,0 +1,24 @@
+/* svg-line-draw のプレビュー用 CSS。pathLength="1" 前提で
+   stroke-dashoffset を 1 → 0 へ補間する。 */
+
+.svg {
+  display: block;
+  color: rgb(190, 242, 100); /* lime-300 系のアクセント */
+}
+
+.svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1400ms ease-in-out;
+}
+
+.svg.isIn path {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg path {
+    transition: none;
+    stroke-dashoffset: 0;
+  }
+}

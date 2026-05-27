@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ThemeToggle } from "./ThemeToggle";
 
 /**
  * サイト共通ヘッダ。`(site)` ルートグループ専用で、
@@ -6,7 +7,7 @@ import Link from "next/link";
  */
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 border-b border-edge bg-base/70 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-edge bg-base/80 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-6">
         <Link
           href="/"
@@ -14,7 +15,7 @@ export function Header() {
         >
           animation factory
         </Link>
-        <nav className="flex items-center gap-5 text-xs text-muted">
+        <nav className="flex items-center gap-4 text-xs text-muted">
           <Link href="/" className="transition-colors hover:text-fg">
             browse
           </Link>
@@ -26,6 +27,7 @@ export function Header() {
           >
             github
           </a>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

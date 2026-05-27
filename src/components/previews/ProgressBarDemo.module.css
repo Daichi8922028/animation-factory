@@ -1,0 +1,54 @@
+/* progress-bar: determinate (scaleX) + indeterminate (流れるハイライト)。 */
+
+.progress {
+  position: relative;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+/* determinate: --value(0..1) を transform: scaleX */
+.bar {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  transform: scaleX(var(--value, 0));
+  background: rgb(190, 242, 100);
+  transition: transform 320ms ease-out;
+}
+
+/* indeterminate: 帯を左→右に流す */
+.indeterminate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(190, 242, 100),
+    transparent
+  );
+  animation: progress-flow 1200ms linear infinite;
+}
+
+@keyframes progress-flow {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indeterminate::after {
+    animation: none;
+    opacity: 0.5;
+    transform: translateX(0);
+  }
+  .bar {
+    transition-duration: 0.01ms;
+  }
+}

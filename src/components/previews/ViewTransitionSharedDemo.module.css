@@ -1,0 +1,26 @@
+/* view-transition-shared: 共有要素 .hero に view-transition-name を付与。
+   対応ブラウザでは old/new の morph、未対応では即時切替。 */
+
+.hero {
+  view-transition-name: vts-demo-hero;
+}
+
+::view-transition-old(vts-demo-hero),
+::view-transition-new(vts-demo-hero) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(vts-demo-hero),
+  ::view-transition-new(vts-demo-hero) {
+    animation: none;
+  }
+}
+
+.swatchA {
+  background: linear-gradient(135deg, #84cc16, #10b981);
+}
+.swatchB {
+  background: linear-gradient(135deg, #06b6d4, #a78bfa);
+}

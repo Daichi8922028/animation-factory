@@ -22,10 +22,11 @@ Vault: `10_Projects/アニメーション工場/`
 
 ## 技術スタック
 
-- Next.js（App Router）+ TypeScript
-- Tailwind CSS
-- Motion（アニメーション）
+- Next.js 16（App Router）+ TypeScript
+- Tailwind CSS v4
+- Motion（軽量アニメ）/ GSAP（Tier B のスクロール演出）
 - Zod（`.animation.md` フロントマターの検証）
+- JSZip（複数 .md の束ね DL）
 - ホスティング: Vercel 無料枠
 
 ## 構成
@@ -33,18 +34,34 @@ Vault: `10_Projects/アニメーション工場/`
 ```
 src/                  Next.js アプリ（App Router）
 content/animations/   本番の *.animation.md（アニメーション 1 件 = 1 ファイル）
-scripts/              .animation.md → 索引・プレビューのビルド（予定）
-previews/             生成されたプレビュー（git 管理外）
+scripts/              .animation.md → 索引・プレビューのビルド
+src/generated/        animation-index.json（ビルド成果物、git 管理外）
+```
+
+## 使い方（end-user）
+
+1. ブラウザでカタログを開き、カテゴリ / 検索 / タグから動きを探す。
+2. カードをホバーで試し、気に入ったら詳細ページへ。
+3. `.md をダウンロード` で 1 ファイル、`add to kit` で複数選択 → 画面下の `Kit を DL` で zip 取得。
+4. 取得した `.animation.md` を AI コーディングエージェント（Claude Code / Cursor 等）に渡し、末尾の `AI Apply Prompt` セクションに従って適用させる。
+
+ホストしている URL から curl で 1 件直取りも可能:
+
+```bash
+curl -o fade-up.animation.md <BASE_URL>/api/animation/fade-up
+curl -o kit.zip "<BASE_URL>/api/kit?ids=fade-up,hover-lift,scroll-reveal"
 ```
 
 ## 開発
 
 ```bash
-npm run dev      # 開発サーバ
-npm run build    # 本番ビルド
-npm run lint     # ESLint
+npm run dev            # 開発サーバ
+npm run check:content  # .animation.md の v1.0 スキーマ検証
+npm run build:index    # content から索引を生成（dev/build 前に自動実行）
+npm run build          # 本番ビルド
+npm run lint           # ESLint
 ```
 
 ## ステータス
 
-Phase 2（アルファ版）実装の初期。現在はリポジトリ scaffold と設計サンプル 3 本（`content/animations/`）まで。
+Phase 3（ベータ版）進行中。設計一式 + アルファ版実装 + Tier B 拡張 + ProjectKit DL が揃った段階。詳細は Vault の `Roadmap.md` 参照。

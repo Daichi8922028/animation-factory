@@ -1,0 +1,50 @@
+/* image-zoom: 親 overflow:hidden、子 img を transform: scale で寄せる。 */
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.frame {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, #1f1f23, #0a0a0b);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
+  will-change: transform;
+  /* 画像の代わりにグラデで擬似サムネ */
+  background: linear-gradient(120deg, #84cc16, #10b981 40%, #06b6d4);
+}
+
+@media (hover: hover) {
+  .card:hover .image {
+    transform: scale(1.08);
+  }
+}
+
+.card:focus-visible .image {
+  transform: scale(1.08);
+}
+
+.body {
+  padding: 12px 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition-duration: 0.01ms;
+  }
+  .card:hover .image {
+    transform: none;
+  }
+}

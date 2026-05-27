@@ -1,0 +1,33 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: padding 220ms ease, background 220ms ease, backdrop-filter 220ms ease,
+    border-color 220ms ease;
+}
+
+.scrolled {
+  padding: 0.55rem 1.5rem;
+  background: rgba(10, 10, 11, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.brand {
+  transition: font-size 220ms ease;
+  font-size: 1.25rem;
+}
+.scrolled .brand {
+  font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .brand {
+    transition-duration: 0.01ms;
+  }
+}

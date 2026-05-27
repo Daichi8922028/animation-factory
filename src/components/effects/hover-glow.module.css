@@ -1,0 +1,37 @@
+/* hover-glow: ホバー / focus-visible で外周に色つきグローを滲ませる。
+   .module.css でスコープ化、box-shadow は擬似要素 opacity で出し入れ → GPU 内で完結。 */
+
+.card {
+  position: relative;
+  isolation: isolate;
+  transition: transform 220ms ease-out;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  box-shadow: 0 0 24px 4px rgba(190, 242, 100, 0.45);
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (hover: hover) {
+  .card:hover::after {
+    opacity: 1;
+  }
+}
+
+.card:focus-visible::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after {
+    transition-duration: 0.01ms;
+  }
+}

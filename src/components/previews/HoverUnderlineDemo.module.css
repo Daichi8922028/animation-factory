@@ -1,0 +1,42 @@
+/* hover-underline: 擬似要素 + scaleX で左→右に伸びる下線。 */
+
+.link {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 4px;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 240ms ease-out;
+}
+
+@media (hover: hover) {
+  .link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* 離脱時に右へ抜ける */
+.link:not(:hover):not(:focus-visible)::after {
+  transform-origin: right center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link::after {
+    transition-duration: 0.01ms;
+  }
+}

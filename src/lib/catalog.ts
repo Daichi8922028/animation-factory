@@ -9,13 +9,41 @@ import type { AnimationFrontmatter } from "./schema";
 
 /** ナビゲーション第 1 階層カテゴリ（site-ia §2） */
 export const CATEGORIES = [
-  { id: "entrance-exit", label: "登場・退場" },
-  { id: "hover-press", label: "ホバー・プレス" },
-  { id: "scroll", label: "スクロール" },
-  { id: "feedback", label: "フィードバック" },
-  { id: "attention", label: "アテンション" },
-  { id: "state-layout", label: "状態遷移・レイアウト" },
-  { id: "navigation", label: "ナビゲーション" },
+  {
+    id: "entrance-exit",
+    label: "登場・退場",
+    description: "要素が現れる／消える瞬間の演出。fade / slide / scale / blur 系。",
+  },
+  {
+    id: "hover-press",
+    label: "ホバー・プレス",
+    description: "ポインタ反応のマイクロインタラクション。lift / glow / tilt 等。",
+  },
+  {
+    id: "scroll",
+    label: "スクロール",
+    description: "スクロール進行に連動した reveal / parallax / pin / scrollytelling。",
+  },
+  {
+    id: "feedback",
+    label: "フィードバック",
+    description: "処理中・読み込み中を伝える。spinner / skeleton / toast / progress。",
+  },
+  {
+    id: "attention",
+    label: "アテンション",
+    description: "ユーザーの視線を引く繰り返しの動き。pulse / shake / highlight。",
+  },
+  {
+    id: "state-layout",
+    label: "状態遷移・レイアウト",
+    description: "開閉・タブ・並べ替えなどレイアウト変化を伴う遷移。",
+  },
+  {
+    id: "navigation",
+    label: "ナビゲーション",
+    description: "ページ遷移・共有要素トランジション。View Transitions 系。",
+  },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]["id"];
@@ -36,6 +64,8 @@ export function categorize(fm: AnimationFrontmatter): CategoryId {
   if (role === "feedback") return "feedback";
   if (role === "attention") return "attention";
   if (role === "navigation") return "navigation";
+  // storytelling は site-ia §2 で「スクロール（軽量 storytelling）」に置く設計
+  if (role === "storytelling") return "scroll";
 
   if (role === "state-transition") {
     const entranceish = ["entrance", "exit", "fade-in", "fade-out", "appear"];
@@ -86,7 +116,12 @@ export type CatalogIndex = {
   generatedAt: string;
   schemaVersion: "1.0";
   animations: AnimationSummary[];
-  categories: { id: CategoryId; label: string; count: number }[];
+  categories: {
+    id: CategoryId;
+    label: string;
+    description: string;
+    count: number;
+  }[];
   facets: Record<string, FacetValue[]>;
   tags: FacetValue[];
 };

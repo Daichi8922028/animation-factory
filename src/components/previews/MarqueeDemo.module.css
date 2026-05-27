@@ -1,0 +1,56 @@
+.wrap {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.wrap::before,
+.wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 64px;
+  z-index: 2;
+  pointer-events: none;
+}
+.wrap::before {
+  left: 0;
+  background: linear-gradient(to right, #0a0a0b, transparent);
+}
+.wrap::after {
+  right: 0;
+  background: linear-gradient(to left, #0a0a0b, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: flow 24s linear infinite;
+  will-change: transform;
+}
+
+.content {
+  display: flex;
+  gap: 3rem;
+  padding: 0 1.5rem;
+  align-items: center;
+  font-size: 1.1rem;
+  color: rgb(212, 212, 216);
+}
+
+@keyframes flow {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.wrap:hover .track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}
