@@ -1,0 +1,180 @@
+# GoalBuddy v2 state.yaml
+# Board truth lives here. goal.md is the editable charter; notes/ holds long receipts only.
+
+version: 2
+
+goal:
+  title: "Animation Factory Docs and CLI"
+  slug: "animation-factory-docs-cli"
+  kind: existing_plan
+  tranche: "Choose and complete the first safe About/schema docs/CLI implementation slice after public deploy and CI/CD."
+  status: active
+  oracle:
+    signal: "A Worker-selected About/docs/CLI slice has concrete artifacts in the repo, matching Obsidian decisions, and passes npm run verify."
+    final_proof: "T999 receipt records implementation summary, verification output, any Obsidian updates, and full_outcome_complete for this tranche."
+  intake:
+    original_request: "project-goal-kanban 作成して、docsとCLIを進めていく方針で。CLI"
+    interpreted_outcome: "Prepare a GoalBuddy board to advance About/docs and CLI work without jumping straight into implementation."
+    input_shape: existing_plan
+    audience: "Site visitors, React developers, AI coding-agent users, and the project owner."
+    authority: "Board creation requested; implementation requires /goal execution and Worker scope."
+    proof_type: "artifact + test + deploy-ready verification"
+    completion_proof: "A selected About/docs/CLI slice is implemented, documented, and verified with npm run verify, with Obsidian updated if decisions changed."
+    likely_misfire: "Implementing CLI immediately without deciding package/bin/BASE_URL/publication scope or syncing docs with the Obsidian source of truth."
+    blind_spots_considered:
+      - "Obsidian remains the source of truth for product decisions."
+      - "Next.js 16 has project-specific rules; read current docs/patterns before App Router edits."
+      - "CLI publication is out of scope unless Judge explicitly narrows and approves it."
+      - "Existing CI/CD is active and should be used as verification."
+      - "Untracked .claude/ is local-only and not part of this goal."
+    existing_plan_facts:
+      - "Roadmap says remaining high-priority work is CLI and About / schema docs."
+      - "Production alias is https://animation-factory-five.vercel.app."
+      - "GitHub Actions CI and manual Vercel production CD workflow are already working."
+      - "ProjectKit API exists at /api/kit and single animation downloads exist at /api/animation/[id]."
+      - "Current content count is 45 animations, alpha 38 + beta 7."
+
+rules:
+  pm_owns_state: true
+  one_active_task: true
+  max_write_workers: 1
+  no_implementation_without_worker_or_pm_task: true
+  no_completion_without_judge_or_pm_audit: true
+  planning_is_not_completion: true
+  queued_required_worker_blocks_completion: true
+  continuous_until_full_outcome: false
+  missing_input_or_credentials_do_not_stop_goal: true
+  preserve_and_validate_existing_plan: true
+  intake_misfire_must_be_audited: true
+
+agents:
+  scout: installed
+  worker: installed
+  judge: installed
+
+visual_board:
+  selected: local
+  local:
+    status: not_started
+    url: null
+    command: "npx goalbuddy board /Users/kakinumadaichi/dev/animation-factory/docs/goals/animation-factory-docs-cli"
+  github_projects:
+    status: not_requested
+    url: null
+    command: "npx goalbuddy extend github-projects"
+    missing: []
+
+active_task: T001
+
+tasks:
+  - id: T001
+    type: scout
+    assignee: Scout
+    status: active
+    reasoning_hint: low
+    objective: "Map the current repo, Obsidian source-of-truth, existing routes, APIs, tests, and CLI/docs implementation options."
+    inputs:
+      - "AGENTS.md"
+      - "README.md"
+      - "package.json"
+      - "tests/e2e/critical-paths.spec.ts"
+      - "/Users/kakinumadaichi/マイドライブ（dazhishizhao@gmail.com）/10_Projects/アニメーション工場/Roadmap.md"
+      - "/Users/kakinumadaichi/マイドライブ（dazhishizhao@gmail.com）/10_Projects/アニメーション工場/log.md"
+      - "src/app/**"
+      - "src/lib/**"
+      - "scripts/**"
+    constraints:
+      - "Read-only Scout task. Do not edit files."
+      - "Preserve Obsidian as the source of truth."
+      - "Identify verification commands and likely allowed_files for docs and CLI slices."
+      - "Flag any CLI publication or package naming uncertainty for Judge."
+    expected_output:
+      - "Evidence summary with file paths."
+      - "Candidate slices for About page, schema docs page, and CLI MVP."
+      - "Recommended first Worker scope candidates."
+      - "Verification command list."
+      - "Risks and open questions."
+    receipt: null
+
+  - id: T002
+    type: judge
+    assignee: Judge
+    status: queued
+    reasoning_hint: high
+    objective: "Choose the first safe Worker slice from Scout evidence and define exact allowed_files, verify commands, and stop conditions."
+    inputs:
+      - "T001 receipt"
+      - "docs/goals/animation-factory-docs-cli/goal.md"
+      - "docs/goals/animation-factory-docs-cli/state.yaml"
+    constraints:
+      - "Do not choose npm publish or external package release as the first slice."
+      - "Prefer a slice that improves public usefulness and can be verified locally."
+      - "If CLI is chosen first, keep it as local repo CLI/bin wiring and tests/docs, not publication."
+      - "Require Obsidian update if a product decision changes."
+    expected_output:
+      - "Decision: first Worker slice."
+      - "Exact Worker objective."
+      - "allowed_files."
+      - "verify commands."
+      - "stop_if conditions."
+      - "Residual risks and deferred tasks."
+    receipt: null
+
+  - id: T003
+    type: worker
+    assignee: Worker
+    status: queued
+    reasoning_hint: low
+    objective: "Execute the first safe docs/CLI implementation slice selected by Judge."
+    inputs:
+      - "T002 receipt"
+    constraints:
+      - "Stay within Judge-provided allowed_files."
+      - "Do not publish to npm."
+      - "Do not touch auth, billing, user submissions, advertising, or database/storage features."
+      - "Do not edit .claude/."
+      - "Use apply_patch for manual edits."
+    expected_output:
+      - "Implemented diff summary."
+      - "Verification results."
+      - "Any Obsidian updates made."
+      - "Follow-up tasks to queue."
+    allowed_files: []
+    verify: []
+    stop_if:
+      - "Judge receipt is missing allowed_files or verify commands."
+      - "Implementation requires npm publish, external account changes, or secrets."
+      - "Implementation requires editing files outside allowed_files."
+      - "Verification fails twice for the same unclear reason."
+      - "Next.js 16 behavior is unclear and current docs/patterns have not been checked."
+    receipt: null
+
+  - id: T999
+    type: judge
+    assignee: Judge
+    status: queued
+    reasoning_hint: high
+    objective: "Audit the implemented slice against the original docs/CLI outcome and decide whether this tranche is complete."
+    inputs:
+      - "T001 receipt"
+      - "T002 receipt"
+      - "T003 receipt"
+      - "git diff"
+      - "verification output"
+    constraints:
+      - "Completion requires implementation proof, not just planning."
+      - "Call out remaining docs/CLI tasks explicitly."
+      - "Do not mark full_outcome_complete if queued required Worker work remains."
+    expected_output:
+      - "Audit decision."
+      - "full_outcome_complete boolean for this tranche."
+      - "Remaining tasks."
+      - "Recommended next /goal continuation if needed."
+    receipt: null
+
+checks:
+  dirty_fingerprint: "initial setup saw untracked .claude/ only before board creation"
+  last_verification:
+    result: pending
+    task: null
+    commands: []
