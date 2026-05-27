@@ -56,11 +56,23 @@ curl -o kit.zip "<BASE_URL>/api/kit?ids=fade-up,hover-lift,scroll-reveal"
 
 ```bash
 npm run dev            # 開発サーバ
+npm run verify         # lint + content check + production build + E2E
+npm run test:e2e       # production build 後に Playwright E2E
 npm run check:content  # .animation.md の v1.0 スキーマ検証
 npm run build:index    # content から索引を生成（dev/build 前に自動実行）
 npm run build          # 本番ビルド
 npm run lint           # ESLint
 ```
+
+## CI / CD
+
+- CI: `.github/workflows/ci.yml`
+  - `main` への push と pull request で `npm run verify` を実行する。
+  - 検証内容は ESLint、`.animation.md` 検証、Next.js production build、Playwright E2E。
+- CD: `.github/workflows/vercel-production.yml`
+  - 手動実行（workflow_dispatch）で Vercel production に prebuilt deploy する。
+  - Vercel の GitHub author 権限チェックを避けるため、Git 連携 deploy ではなく Vercel CLI の `pull -> build -> deploy --prebuilt --prod --archive=tgz` を使う。
+  - GitHub Secrets に `VERCEL_TOKEN` / `VERCEL_ORG_ID` / `VERCEL_PROJECT_ID` が必要。
 
 ## ステータス
 
