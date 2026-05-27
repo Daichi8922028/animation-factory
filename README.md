@@ -73,6 +73,7 @@ npm run lint           # ESLint
   - 手動実行（workflow_dispatch）で Vercel production に prebuilt deploy する。
   - Vercel の GitHub author 権限チェックを避けるため、Git 連携 deploy ではなく Vercel CLI の `pull -> build -> deploy --prebuilt --prod --archive=tgz` を使う。
   - GitHub Secrets に `VERCEL_TOKEN` / `VERCEL_ORG_ID` / `VERCEL_PROJECT_ID` が必要。
+  - この repo では `VERCEL_ORG_ID` / `VERCEL_PROJECT_ID` は設定済み。残りは `VERCEL_TOKEN`。
 
 ## ステータス
 
