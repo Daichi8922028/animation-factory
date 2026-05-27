@@ -7,6 +7,9 @@ concurrency:
   group: vercel-production
   cancel-in-progress: false
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   deploy:
     name: Build and deploy
