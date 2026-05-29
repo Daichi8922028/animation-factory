@@ -51,6 +51,9 @@ jobs:
       - name: Verify
         run: npm run verify
 
+      - name: Strip git context for Vercel
+        run: rm -rf .git
+
       - name: Pull Vercel environment
         run: npx vercel@latest pull --yes --environment=production --token="$VERCEL_TOKEN"
 
