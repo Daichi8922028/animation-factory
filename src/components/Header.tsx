@@ -19,6 +19,12 @@ export function Header() {
           <Link href="/" className="transition-colors hover:text-fg">
             browse
           </Link>
+          <Link href="/about" className="transition-colors hover:text-fg">
+            about
+          </Link>
+          <Link href="/docs/schema" className="transition-colors hover:text-fg">
+            docs
+          </Link>
           <a
             href="https://github.com/Daichi8922028/animation-factory"
             target="_blank"

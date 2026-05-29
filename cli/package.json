@@ -1,0 +1,35 @@
+{
+  "name": "animation-factory",
+  "version": "0.1.0",
+  "description": "CLI for the animation factory catalog. Fetch .animation.md, search, and bundle kits from any shell or AI agent.",
+  "type": "module",
+  "bin": "./animation-factory.mjs",
+  "files": [
+    "animation-factory.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "author": "@daichi",
+  "homepage": "https://animation-factory-five.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Daichi8922028/animation-factory.git",
+    "directory": "cli"
+  },
+  "bugs": {
+    "url": "https://github.com/Daichi8922028/animation-factory/issues"
+  },
+  "keywords": [
+    "animation",
+    "catalog",
+    "react",
+    "motion",
+    "ui",
+    "cli",
+    "mcp",
+    "ai"
+  ]
+}

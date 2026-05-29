@@ -43,6 +43,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# 内部運用ツール — ローカル絶対パスや個人メールを含むため公開しない
+docs/goals/
+.claude/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
