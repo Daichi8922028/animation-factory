@@ -43,6 +43,11 @@ import { TooltipPopDemo } from "./TooltipPopDemo";
 import { DropdownMenuDemo } from "./DropdownMenuDemo";
 import { PageLoadingBarDemo } from "./PageLoadingBarDemo";
 import { MagneticButtonDemo } from "./MagneticButtonDemo";
+import { ModalScaleBlurDemo } from "./ModalScaleBlurDemo";
+import { DialogFocusTrapDemo } from "./DialogFocusTrapDemo";
+import { ConfirmDialogShakeOnNoDemo } from "./ConfirmDialogShakeOnNoDemo";
+import { PopoverAnchorPositioningDemo } from "./PopoverAnchorPositioningDemo";
+import { CommandPaletteCmdkDemo } from "./CommandPaletteCmdkDemo";
 
 /**
  * id → プレビューコンポーネント のディスパッチ。
@@ -155,6 +160,16 @@ export function PreviewById({
       return <PageLoadingBarDemo />;
     case "magnetic-button":
       return <MagneticButtonDemo />;
+    case "modal-scale-blur":
+      return <ModalScaleBlurDemo />;
+    case "dialog-focus-trap":
+      return <DialogFocusTrapDemo />;
+    case "confirm-dialog-shake-on-no":
+      return <ConfirmDialogShakeOnNoDemo />;
+    case "popover-anchor-positioning":
+      return <PopoverAnchorPositioningDemo />;
+    case "command-palette-cmdk":
+      return <CommandPaletteCmdkDemo />;
     default:
       return null;
   }

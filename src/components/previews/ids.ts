@@ -49,6 +49,11 @@ export const PREVIEW_IDS = [
   "dropdown-menu",
   "page-loading-bar",
   "magnetic-button",
+  "modal-scale-blur",
+  "dialog-focus-trap",
+  "confirm-dialog-shake-on-no",
+  "popover-anchor-positioning",
+  "command-palette-cmdk",
 ] as const;
 
 /** その id がパラメータ操作 UI に対応しているか（ParameterPanel 表示判定に使う） */
