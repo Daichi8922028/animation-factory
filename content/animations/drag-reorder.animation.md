@@ -2,7 +2,7 @@
 id: drag-reorder
 name: Drag Reorder
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   リストをドラッグ＆ドロップで並び替え。Motion の Reorder で順序変更の補間まで宣言的に。

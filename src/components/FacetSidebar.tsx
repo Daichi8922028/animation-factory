@@ -28,7 +28,7 @@ export type FacetKey = (typeof FACET_KEYS)[number];
 export type FacetSelection = Record<FacetKey, string[]>;
 
 export const FACET_LABELS: Record<FacetKey, string> = {
-  release: "リリース",
+  release: "追加バージョン",
   trigger: "トリガー",
   lifecycle: "ライフサイクル",
   perfCost: "パフォーマンス",
@@ -45,10 +45,10 @@ type FacetHelp = { summary: string; values: { value: string; note: string }[] };
 const FACET_HELP: Record<FacetKey, FacetHelp> = {
   release: {
     summary:
-      "公開ステータス。alpha = React に素直に乗る軽量な動き、beta = GSAP / Lottie / View Transitions など手間が増える動き。",
+      "そのアニメがどのバージョンで追加されたか。数字が小さいほど初期から存在する。",
     values: [
-      { value: "alpha", note: "Tier A。Motion / CSS で完結する軽量実装" },
-      { value: "beta", note: "Tier B。外部ライブラリや新しめのブラウザ API が必要" },
+      { value: "v1.0", note: "初期リリースの 45 件（OSS 公開時）" },
+      { value: "v1.1", note: "navigation / form / トリガー多様化 / View Transitions の拡充 25 件" },
     ],
   },
   trigger: {

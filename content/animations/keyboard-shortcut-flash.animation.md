@@ -2,7 +2,7 @@
 id: keyboard-shortcut-flash
 name: Keyboard Shortcut Flash
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   キーボードショートカットが押された瞬間、対応する kbd 表示が一瞬光って（flash）押下を視覚化する。

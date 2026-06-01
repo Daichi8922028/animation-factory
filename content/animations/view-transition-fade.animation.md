@@ -2,7 +2,7 @@
 id: view-transition-fade
 name: View Transition Fade
 version: 1.0.0
-release: beta
+release: v1.0
 variant: vanilla-css
 description: |
   View Transitions API（`document.startViewTransition()`）で、画面状態の切替を

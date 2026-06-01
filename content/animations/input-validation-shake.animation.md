@@ -2,7 +2,7 @@
 id: input-validation-shake
 name: Input Validation Shake
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   フォーム入力のバリデーションエラー時に、その入力欄を短く左右に shake し、border を赤に、

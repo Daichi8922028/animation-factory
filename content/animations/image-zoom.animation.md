@@ -2,7 +2,7 @@
 id: image-zoom
 name: Image Zoom
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   サムネイル画像がコンテナ内で拡大する micro-interaction。

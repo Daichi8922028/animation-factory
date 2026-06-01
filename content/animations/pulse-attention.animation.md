@@ -2,7 +2,7 @@
 id: pulse-attention
 name: Pulse Attention
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   バッジやドットを定期的に脈動させ、ユーザーの注意を集める。

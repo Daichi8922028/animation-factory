@@ -2,7 +2,7 @@
 id: sidebar-collapse-animated
 name: Sidebar Collapse Animated
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   サイドバーを幅アニメで折りたたみ、テキストラベルは fade-out してアイコンだけ残す。

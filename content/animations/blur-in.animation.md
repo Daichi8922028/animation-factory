@@ -2,7 +2,7 @@
 id: blur-in
 name: Blur In
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   要素が強めのぼかし（blur 12px 前後）から fade で現れる、印象的な登場アニメーション。

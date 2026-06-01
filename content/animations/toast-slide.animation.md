@@ -2,7 +2,7 @@
 id: toast-slide
 name: Toast Slide
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   画面右下から軽くスライドインし、数秒後に自動で fade-out するトースト通知。

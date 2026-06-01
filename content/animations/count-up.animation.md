@@ -2,7 +2,7 @@
 id: count-up
 name: Count Up
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   数字を 0 → 目標値に滑らかにカウントアップする。

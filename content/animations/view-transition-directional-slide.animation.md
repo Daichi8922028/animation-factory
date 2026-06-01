@@ -2,7 +2,7 @@
 id: view-transition-directional-slide
 name: View Transition Directional Slide
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   ページ遷移で「進む」と「戻る」を区別し、ネイティブアプリのように方向の異なるスライドで切替える。

@@ -2,7 +2,7 @@
 id: marquee
 name: Marquee
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   ロゴストリップやお知らせバーで定番の、無限に流れる横スクロール。

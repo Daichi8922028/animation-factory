@@ -2,7 +2,7 @@
 id: view-transition-wipe-custom
 name: View Transition Custom Wipe
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   画面/セクションの切替を、clip-path のワイプで新コンテンツが拭うように現れる演出にする。

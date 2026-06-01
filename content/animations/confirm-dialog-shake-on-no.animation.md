@@ -2,7 +2,7 @@
 id: confirm-dialog-shake-on-no
 name: Confirm Dialog Shake on Dismiss
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   破壊的操作の確認ダイアログで、背景クリックや ESC による「曖昧な dismiss」を拒否し、枠を短く shake して

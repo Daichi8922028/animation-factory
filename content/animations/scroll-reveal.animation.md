@@ -3,7 +3,7 @@
 id: scroll-reveal
 name: Scroll Reveal
 version: 1.0.0
-release: beta
+release: v1.0
 variant: css-scroll-driven
 description: |
   要素がビューポートを通過する進捗に連動して、下からフェードインしながら

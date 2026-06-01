@@ -2,7 +2,7 @@
 id: fade-up
 name: Fade Up
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   下方向（y: 16px 前後）から fade で登場する、最も汎用的な entrance アニメーション。

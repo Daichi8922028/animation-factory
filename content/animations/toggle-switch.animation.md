@@ -2,7 +2,7 @@
 id: toggle-switch
 name: Toggle Switch
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   iOS 風のトグルスイッチ。つまみが左↔右に滑り、トラックの色が補間する。

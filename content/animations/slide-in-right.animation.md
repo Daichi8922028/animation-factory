@@ -2,7 +2,7 @@
 id: slide-in-right
 name: Slide In Right
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   右から（または左から）水平にスライドして登場する entrance アニメーション。

@@ -2,7 +2,7 @@
 id: magnetic-button
 name: Magnetic Button
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   ボタンがカーソルに引き寄せられるように追従する micro-interaction。

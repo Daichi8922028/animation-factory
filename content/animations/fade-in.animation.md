@@ -2,7 +2,7 @@
 id: fade-in
 name: Fade In
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   単一要素を不透明度 0 → 1 で滑らかに表示する、最も基本的な登場アニメーション。

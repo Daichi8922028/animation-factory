@@ -2,7 +2,7 @@
 id: tab-underline-slide
 name: Tab Underline Slide
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   タブ切替時に、アクティブを示すアンダーラインが選択タブへ滑って移動する。Motion の layoutId による

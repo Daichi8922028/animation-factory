@@ -2,7 +2,7 @@
 id: rive-state-machine
 name: Rive State Machine
 version: 1.0.0
-release: beta
+release: v1.0
 variant: react-rive
 description: |
   Rive Editor で作った `.riv` ファイルをブラウザで再生し、State Machine の input を

@@ -2,7 +2,7 @@
 id: tooltip-pop
 name: Tooltip Pop
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   ホバー／フォーカスで小さなツールチップが fade + scale で現れる。

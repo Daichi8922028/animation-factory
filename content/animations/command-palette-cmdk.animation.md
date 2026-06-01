@@ -2,7 +2,7 @@
 id: command-palette-cmdk
 name: Command Palette (Cmd+K)
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   ⌘K / Ctrl+K で開く検索コマンドパレット。上から軽く落ちて scale-in し、入力に即フォーカス。

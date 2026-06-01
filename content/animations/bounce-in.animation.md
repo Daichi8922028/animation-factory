@@ -2,7 +2,7 @@
 id: bounce-in
 name: Bounce In
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   通知バッジや小さい要素がポンっとバウンドしながら登場する attention アニメ。

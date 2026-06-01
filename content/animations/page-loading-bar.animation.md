@@ -2,7 +2,7 @@
 id: page-loading-bar
 name: Page Loading Bar
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   画面上部に薄いバーが現れ、ページ／ルート遷移の進行を示す（NProgress 風）。

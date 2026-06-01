@@ -2,7 +2,7 @@
 id: bottom-sheet-snap-points
 name: Bottom Sheet Snap Points
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   下から出るボトムシートを縦ドラッグで peek / half / full の 3 段階にスナップさせる。

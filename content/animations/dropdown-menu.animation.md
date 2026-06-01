@@ -2,7 +2,7 @@
 id: dropdown-menu
 name: Dropdown Menu
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   ボタン押下で下方向に展開するメニュー。背景が fade、項目が短い stagger で順次登場。

@@ -2,7 +2,7 @@
 id: cursor-spotlight
 name: Cursor Spotlight
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   マウスカーソルに追従する円形のソフトな光（スポットライト）。

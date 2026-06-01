@@ -2,7 +2,7 @@
 id: lottie-playback
 name: Lottie Playback
 version: 1.0.0
-release: beta
+release: v1.0
 variant: react-lottie
 description: |
   After Effects → Bodymovin で書き出した Lottie JSON を `lottie-react` で再生する。

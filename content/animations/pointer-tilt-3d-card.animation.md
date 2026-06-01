@@ -2,7 +2,7 @@
 id: pointer-tilt-3d-card
 name: Pointer Tilt 3D Card
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   カードがポインタの位置に応じて 3D（perspective）で傾き、光沢（glare）が追従する。

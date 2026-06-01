@@ -98,7 +98,7 @@ export function DialogFocusTrapDemo() {
                   名前
                   <input
                     type="text"
-                    defaultValue="Daichi"
+                    defaultValue="山田 太郎"
                     className="mt-1 w-full rounded-md border border-white/10 bg-zinc-950 px-3 py-1.5 text-sm text-zinc-100 outline-none focus-visible:border-lime-300/60 focus-visible:ring-2 focus-visible:ring-lime-300/30"
                   />
                 </label>

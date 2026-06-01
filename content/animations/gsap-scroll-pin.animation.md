@@ -2,7 +2,7 @@
 id: gsap-scroll-pin
 name: Scroll Pin (GSAP)
 version: 1.0.0
-release: beta
+release: v1.0
 variant: gsap-scrolltrigger
 description: |
   GSAP ScrollTrigger でセクションをビューポートに pin し、スクロール進行に合わせて

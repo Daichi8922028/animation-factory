@@ -2,7 +2,7 @@
 id: accordion-collapse
 name: Accordion Collapse
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   クリック/タップで内容を展開・折りたたみする定番 UI。

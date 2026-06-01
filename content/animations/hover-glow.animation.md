@@ -2,7 +2,7 @@
 id: hover-glow
 name: Hover Glow
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   ポインタが乗ると要素の周囲に柔らかい光（color-bleed）が滲み出るマイクロインタラクション。

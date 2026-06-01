@@ -3,7 +3,7 @@
 id: hover-lift
 name: Hover Lift
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   カードやボタンにポインタを乗せると、わずかに浮き上がり影が深くなる

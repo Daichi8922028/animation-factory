@@ -2,7 +2,7 @@
 id: spinner-dots
 name: Spinner Dots
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   3 つのドットが順に上下しながら点滅する、定番のローディングスピナー。

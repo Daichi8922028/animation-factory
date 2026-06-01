@@ -2,7 +2,7 @@
 id: view-transition-card-to-detail
 name: View Transition Card to Detail
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   カード一覧から詳細へ遷移する際、選んだカードが共有要素として詳細のヒーローへ拡大しながら繋がる。

@@ -2,7 +2,7 @@
 id: text-reveal-lines
 name: Text Reveal (Lines)
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   見出しが行ごとに下からスライド & fade で登場するタイポグラフィック演出。

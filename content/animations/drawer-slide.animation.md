@@ -2,7 +2,7 @@
 id: drawer-slide
 name: Drawer Slide
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   画面の端（右／左／下）からスライドして登場するパネル。

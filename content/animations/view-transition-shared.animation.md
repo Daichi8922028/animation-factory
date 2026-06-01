@@ -2,7 +2,7 @@
 id: view-transition-shared
 name: View Transition Shared Element
 version: 1.0.0
-release: beta
+release: v1.0
 variant: vanilla-css
 description: |
   View Transitions API の `view-transition-name` で、画面遷移を跨いで同じ要素が

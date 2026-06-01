@@ -2,7 +2,7 @@
 id: hover-tilt
 name: Hover Tilt
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   ポインタ位置に応じてカードが 3D 風に傾く micro-interaction。

@@ -2,7 +2,7 @@
 id: svg-line-draw
 name: SVG Line Draw
 version: 1.0.0
-release: beta
+release: v1.0
 variant: vanilla-css
 description: |
   SVG パスを `stroke-dasharray` + `stroke-dashoffset` で「描かれる」ように見せる古典的演出。

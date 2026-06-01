@@ -2,7 +2,7 @@
 id: progress-bar
 name: Progress Bar
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   処理の進行度を 0% → 100% で伝えるバー。determinate（値あり）と

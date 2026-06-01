@@ -2,7 +2,7 @@
 id: password-strength-bar
 name: Password Strength Bar
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   パスワード入力中、強度に応じてセグメント化したバーがリアルタイムに伸び、色が赤→橙→黄緑と変化する

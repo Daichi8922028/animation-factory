@@ -2,7 +2,7 @@
 id: modal-scale-blur
 name: Modal Scale Blur
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   背景を backdrop-filter で一段ぼかしつつ、中身を spring で scale-in させるモーダル開閉。

@@ -2,7 +2,7 @@
 id: scale-in
 name: Scale In
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   要素が中央からわずかに拡大しつつ opacity 0 → 1 で登場する。

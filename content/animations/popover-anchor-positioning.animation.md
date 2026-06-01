@@ -2,7 +2,7 @@
 id: popover-anchor-positioning
 name: Popover with CSS Anchor Positioning
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   CSS Anchor Positioning でトリガー要素に紐づけてポップオーバーを配置し、@starting-style で軽く落として登場させる。

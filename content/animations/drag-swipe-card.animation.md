@@ -2,7 +2,7 @@
 id: drag-swipe-card
 name: Drag Swipe Card
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   カードを左右にドラッグし、しきい値を超えたら dismiss、戻したら spring で復帰する。

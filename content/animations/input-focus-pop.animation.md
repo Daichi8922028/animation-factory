@@ -2,7 +2,7 @@
 id: input-focus-pop
 name: Input Focus Pop
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   テキスト入力にフォーカスすると、プレースホルダ風のラベルが上に float し、border/ring が拡張して

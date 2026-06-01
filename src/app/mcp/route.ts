@@ -31,7 +31,7 @@ const TOOLS = [
   {
     name: "search_animations",
     description:
-      "Search the animation catalog by free-text query, category, and release tier. " +
+      "Search the animation catalog by free-text query, category, and release version. " +
       "Returns matching animations with id, name, description, category, release, tags. " +
       "Use this first to discover what's available, then call get_animation for the full .md.",
     inputSchema: {
@@ -49,9 +49,8 @@ const TOOLS = [
         },
         release: {
           type: "string",
-          enum: ["alpha", "beta"],
           description:
-            "alpha = pure React/Motion/CSS. beta = GSAP / Lottie / View Transitions etc.",
+            "Release version the animation was added in (e.g. v1.0, v1.1).",
         },
         tag: {
           type: "string",

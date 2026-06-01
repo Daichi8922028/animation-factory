@@ -2,7 +2,7 @@
 id: long-press-context-menu
 name: Long Press Context Menu
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   要素を 300ms ほど長押しすると、押下中に進捗リングが満ちてからコンテキストメニューが pop する。

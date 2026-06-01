@@ -3,7 +3,7 @@
 id: entrance-stagger-fade
 name: Stagger Fade Entrance
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   リスト項目を順に少しずつ遅らせて、下からふわっとフェードインさせる

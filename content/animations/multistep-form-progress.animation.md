@@ -2,7 +2,7 @@
 id: multistep-form-progress
 name: Multistep Form Progress
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   複数ステップのフォームで 1 → 2 → 3 の進行を示すステップインジケータ。アクティブ円が拡大し、

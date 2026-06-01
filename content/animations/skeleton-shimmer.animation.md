@@ -2,7 +2,7 @@
 id: skeleton-shimmer
 name: Skeleton Shimmer
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   読み込み中のコンテンツ位置にプレースホルダ矩形を置き、左から右へ走る

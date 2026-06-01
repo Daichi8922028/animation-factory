@@ -2,7 +2,7 @@
 id: input-success-checkmark
 name: Input Success Checkmark
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   入力が検証を通った瞬間、欄の右側に緑のチェックマークが SVG ストロークで描かれながらスライドインする

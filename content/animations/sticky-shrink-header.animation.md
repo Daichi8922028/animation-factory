@@ -2,7 +2,7 @@
 id: sticky-shrink-header
 name: Sticky Shrink Header
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   スクロール開始でヘッダが縮む。背景を不透明化・高さを縮め・タイポを小さくして情報密度を上げる。

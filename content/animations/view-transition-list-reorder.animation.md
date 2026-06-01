@@ -2,7 +2,7 @@
 id: view-transition-list-reorder
 name: View Transition List Reorder
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   リストの並び替え（ソート）時に、各行が View Transitions API で旧位置から新位置へ滑って入れ替わる。

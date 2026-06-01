@@ -2,7 +2,7 @@
 id: dialog-focus-trap
 name: Dialog Focus Trap
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   modal の登場演出に「アクセシブルな focus 管理」を足した a11y 強化ダイアログ。

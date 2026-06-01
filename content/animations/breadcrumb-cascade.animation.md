@@ -2,7 +2,7 @@
 id: breadcrumb-cascade
 name: Breadcrumb Cascade
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   パンくずリストの各階層が、左から少しずつ遅延して順次 fade-in する cascade 演出。

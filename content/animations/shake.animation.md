@@ -2,7 +2,7 @@
 id: shake
 name: Shake
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   入力エラーや無効操作を伝えるため、要素を短く左右に揺らす attention アニメーション。

@@ -2,7 +2,7 @@
 id: css-scroll-driven
 name: CSS Scroll-Driven Reveal
 version: 1.0.0
-release: beta
+release: v1.0
 variant: vanilla-css
 description: |
   `animation-timeline: view()` を使い、ビューポート進入の進行を CSS だけでアニメに繋ぐ。

@@ -333,13 +333,10 @@ function RelatedLink({
 }
 
 function ReleaseBadge({ release }: { release: AnimationSummary["release"] }) {
-  const cls =
-    release === "alpha"
-      ? "bg-emerald-500/15 text-emerald-700 border-emerald-500/40 dark:text-emerald-300 dark:border-emerald-500/30"
-      : "bg-amber-500/15 text-amber-700 border-amber-500/40 dark:text-amber-300 dark:border-amber-500/30";
   return (
     <span
-      className={`text-xs uppercase tracking-wider border rounded-full px-2 py-0.5 ${cls}`}
+      title="追加バージョン"
+      className="rounded-full border border-zinc-300 bg-zinc-100 px-2 py-0.5 text-xs tracking-wider text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300"
     >
       {release}
     </span>

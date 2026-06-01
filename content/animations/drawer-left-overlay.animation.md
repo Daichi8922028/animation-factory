@@ -2,7 +2,7 @@
 id: drawer-left-overlay
 name: Drawer Left Overlay
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   画面左から滑り込むナビゲーションドロワー（overlay モード）。背景を dim で覆い、本体の上に重ねて表示する。

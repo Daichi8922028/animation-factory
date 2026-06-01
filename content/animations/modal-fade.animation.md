@@ -2,7 +2,7 @@
 id: modal-fade
 name: Modal Fade
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   モーダルの背景が fade-in、中身が scale-in でポンと現れる定番の開閉演出。

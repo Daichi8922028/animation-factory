@@ -2,7 +2,7 @@
 id: typewriter
 name: Typewriter
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   文字が 1 文字ずつ「打たれる」ように現れるタイプライタ演出。

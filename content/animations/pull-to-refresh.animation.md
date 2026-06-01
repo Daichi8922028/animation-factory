@@ -2,7 +2,7 @@
 id: pull-to-refresh
 name: Pull to Refresh
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   リスト最上部から下に引っ張ると、閾値を超えたところでスピナーが現れ、離すと更新が走るモバイル定番ジェスチャ。

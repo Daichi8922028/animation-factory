@@ -2,7 +2,7 @@
 id: tab-switch
 name: Tab Switch
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   タブ切替時にインジケータが選択タブの位置へ滑らかに移動し、中身が fade で入れ替わる。

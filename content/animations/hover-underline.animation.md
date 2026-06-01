@@ -2,7 +2,7 @@
 id: hover-underline
 name: Hover Underline
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   リンクやメニュー項目の下線が、ホバーで左→右に伸びる micro-interaction。

@@ -2,7 +2,7 @@
 id: highlight-flash
 name: Highlight Flash
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: vanilla-css
 description: |
   要素が一瞬色の付いた背景でフラッシュして消える attention アニメ。

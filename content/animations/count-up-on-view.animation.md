@@ -2,7 +2,7 @@
 id: count-up-on-view
 name: Count Up On View
 version: 1.0.0
-release: beta
+release: v1.1
 variant: react-motion
 description: |
   数値カウンタが、ビューポートに入った瞬間に 0 から目標値までアニメーションで上昇する。

@@ -93,7 +93,9 @@ export const animationFrontmatterSchema = z
     }),
     name: z.string(),
     version: z.string(),
-    release: z.enum(["alpha", "beta"]),
+    release: z.string().regex(/^v\d+\.\d+$/, {
+      message: "release は追加バージョン vX.Y 形式（例: v1.0 / v1.1）である必要があります",
+    }),
     variant: z.string().optional(),
     description: z.string(),
     taxonomy,

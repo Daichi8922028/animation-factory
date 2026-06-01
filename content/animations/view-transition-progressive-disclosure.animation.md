@@ -2,7 +2,7 @@
 id: view-transition-progressive-disclosure
 name: View Transition Progressive Disclosure
 version: 1.0.0
-release: beta
+release: v1.1
 variant: vanilla-css
 description: |
   段階的に開示するフォーム/ウィザードで、ステップ切替時に内容が左右へスライドして入れ替わる。

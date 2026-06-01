@@ -61,11 +61,8 @@ export function AnimationCard({
       <div className="flex items-baseline justify-between gap-3">
         <h3 className="text-lg text-fg">{a.name}</h3>
         <span
-          className={`text-[10px] uppercase tracking-wider rounded-full border px-2 py-0.5 ${
-            a.release === "alpha"
-              ? "border-emerald-500/40 text-emerald-700 bg-emerald-500/10 dark:text-emerald-300"
-              : "border-amber-500/40 text-amber-700 bg-amber-500/10 dark:text-amber-300"
-          }`}
+          className="rounded-full border border-zinc-300 bg-zinc-100 px-2 py-0.5 text-[10px] tracking-wider text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-300"
+          title="追加バージョン"
         >
           {a.release}
         </span>

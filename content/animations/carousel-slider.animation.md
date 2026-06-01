@@ -2,7 +2,7 @@
 id: carousel-slider
 name: Carousel Slider
 version: 1.0.0
-release: alpha
+release: v1.0
 variant: react-motion
 description: |
   スライドで画面を切り替えるカルーセル。AnimatePresence の direction-aware exit で
