@@ -1,0 +1,50 @@
+/* view-transition-progressive-disclosure: :root[data-vt] で方向別スライド（名前 vtpd-panel に限定） */
+
+.panel {
+  view-transition-name: vtpd-panel;
+  min-height: 7rem;
+}
+
+:root[data-vt="forward"]::view-transition-old(vtpd-panel) {
+  animation: vtpd-out-left 320ms ease both;
+}
+:root[data-vt="forward"]::view-transition-new(vtpd-panel) {
+  animation: vtpd-in-right 320ms ease both;
+}
+:root[data-vt="back"]::view-transition-old(vtpd-panel) {
+  animation: vtpd-out-right 320ms ease both;
+}
+:root[data-vt="back"]::view-transition-new(vtpd-panel) {
+  animation: vtpd-in-left 320ms ease both;
+}
+
+@keyframes vtpd-out-left {
+  to {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+}
+@keyframes vtpd-in-right {
+  from {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+@keyframes vtpd-out-right {
+  to {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+}
+@keyframes vtpd-in-left {
+  from {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(vtpd-panel) {
+    animation: none;
+  }
+}

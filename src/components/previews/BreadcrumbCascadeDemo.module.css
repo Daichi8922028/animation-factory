@@ -1,0 +1,27 @@
+/* breadcrumb-cascade: 各階層を animation-delay で順次 fade-in */
+
+@keyframes crumb-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0;
+  animation: crumb-in 360ms ease-out forwards;
+  animation-delay: calc(var(--i) * 90ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crumb {
+    animation: none;
+    opacity: 1;
+  }
+}

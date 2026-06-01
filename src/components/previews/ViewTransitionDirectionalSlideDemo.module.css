@@ -1,0 +1,45 @@
+/* view-transition-directional-slide: :root[data-dir] で進む/戻るの向きを出し分け（名前 vtds-page に限定） */
+
+.page {
+  view-transition-name: vtds-page;
+}
+
+:root[data-dir="forward"]::view-transition-old(vtds-page) {
+  animation: vtds-out-left 300ms both;
+}
+:root[data-dir="forward"]::view-transition-new(vtds-page) {
+  animation: vtds-in-right 300ms both;
+}
+:root[data-dir="back"]::view-transition-old(vtds-page) {
+  animation: vtds-out-right 300ms both;
+}
+:root[data-dir="back"]::view-transition-new(vtds-page) {
+  animation: vtds-in-left 300ms both;
+}
+
+@keyframes vtds-out-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes vtds-in-right {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes vtds-out-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes vtds-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(vtds-page) {
+    animation: none;
+  }
+}

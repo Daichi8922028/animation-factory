@@ -48,6 +48,26 @@ import { DialogFocusTrapDemo } from "./DialogFocusTrapDemo";
 import { ConfirmDialogShakeOnNoDemo } from "./ConfirmDialogShakeOnNoDemo";
 import { PopoverAnchorPositioningDemo } from "./PopoverAnchorPositioningDemo";
 import { CommandPaletteCmdkDemo } from "./CommandPaletteCmdkDemo";
+import { InputFocusPopDemo } from "./InputFocusPopDemo";
+import { InputValidationShakeDemo } from "./InputValidationShakeDemo";
+import { InputSuccessCheckmarkDemo } from "./InputSuccessCheckmarkDemo";
+import { PasswordStrengthBarDemo } from "./PasswordStrengthBarDemo";
+import { MultistepFormProgressDemo } from "./MultistepFormProgressDemo";
+import { BottomSheetSnapPointsDemo } from "./BottomSheetSnapPointsDemo";
+import { DrawerLeftOverlayDemo } from "./DrawerLeftOverlayDemo";
+import { SidebarCollapseAnimatedDemo } from "./SidebarCollapseAnimatedDemo";
+import { TabUnderlineSlideDemo } from "./TabUnderlineSlideDemo";
+import { BreadcrumbCascadeDemo } from "./BreadcrumbCascadeDemo";
+import { KeyboardShortcutFlashDemo } from "./KeyboardShortcutFlashDemo";
+import { CountUpOnViewDemo } from "./CountUpOnViewDemo";
+import { PullToRefreshDemo } from "./PullToRefreshDemo";
+import { LongPressContextMenuDemo } from "./LongPressContextMenuDemo";
+import { PointerTilt3dCardDemo } from "./PointerTilt3dCardDemo";
+import { ViewTransitionListReorderDemo } from "./ViewTransitionListReorderDemo";
+import { ViewTransitionCardToDetailDemo } from "./ViewTransitionCardToDetailDemo";
+import { ViewTransitionProgressiveDisclosureDemo } from "./ViewTransitionProgressiveDisclosureDemo";
+import { ViewTransitionDirectionalSlideDemo } from "./ViewTransitionDirectionalSlideDemo";
+import { ViewTransitionWipeCustomDemo } from "./ViewTransitionWipeCustomDemo";
 
 /**
  * id → プレビューコンポーネント のディスパッチ。
@@ -170,6 +190,46 @@ export function PreviewById({
       return <PopoverAnchorPositioningDemo />;
     case "command-palette-cmdk":
       return <CommandPaletteCmdkDemo />;
+    case "input-focus-pop":
+      return <InputFocusPopDemo />;
+    case "input-validation-shake":
+      return <InputValidationShakeDemo />;
+    case "input-success-checkmark":
+      return <InputSuccessCheckmarkDemo />;
+    case "password-strength-bar":
+      return <PasswordStrengthBarDemo />;
+    case "multistep-form-progress":
+      return <MultistepFormProgressDemo />;
+    case "bottom-sheet-snap-points":
+      return <BottomSheetSnapPointsDemo />;
+    case "drawer-left-overlay":
+      return <DrawerLeftOverlayDemo />;
+    case "sidebar-collapse-animated":
+      return <SidebarCollapseAnimatedDemo />;
+    case "tab-underline-slide":
+      return <TabUnderlineSlideDemo />;
+    case "breadcrumb-cascade":
+      return <BreadcrumbCascadeDemo />;
+    case "keyboard-shortcut-flash":
+      return <KeyboardShortcutFlashDemo />;
+    case "count-up-on-view":
+      return <CountUpOnViewDemo />;
+    case "pull-to-refresh":
+      return <PullToRefreshDemo />;
+    case "long-press-context-menu":
+      return <LongPressContextMenuDemo />;
+    case "pointer-tilt-3d-card":
+      return <PointerTilt3dCardDemo />;
+    case "view-transition-list-reorder":
+      return <ViewTransitionListReorderDemo />;
+    case "view-transition-card-to-detail":
+      return <ViewTransitionCardToDetailDemo />;
+    case "view-transition-progressive-disclosure":
+      return <ViewTransitionProgressiveDisclosureDemo />;
+    case "view-transition-directional-slide":
+      return <ViewTransitionDirectionalSlideDemo />;
+    case "view-transition-wipe-custom":
+      return <ViewTransitionWipeCustomDemo />;
     default:
       return null;
   }

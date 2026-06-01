@@ -1,0 +1,36 @@
+/* pointer-tilt-3d-card: CSS 変数 --rx/--ry を pointermove で更新して 3D 傾斜 */
+
+.card {
+  --rx: 0deg;
+  --ry: 0deg;
+  position: relative;
+  width: 18rem;
+  height: 11rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  background: linear-gradient(145deg, rgb(39 39 42), rgb(24 24 27));
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  transition: transform 120ms ease-out;
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.6);
+  overflow: hidden;
+}
+
+.glare {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgb(255 255 255 / 0.22),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transform: none;
+    transition: none;
+  }
+}

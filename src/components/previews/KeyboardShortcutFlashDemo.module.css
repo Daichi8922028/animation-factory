@@ -1,0 +1,45 @@
+/* keyboard-shortcut-flash: 押下時に kbd が scale + glow で一瞬光る */
+
+.kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 3.5rem;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1px solid rgb(255 255 255 / 0.15);
+  background: rgb(39 39 42);
+  color: rgb(228 228 231);
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+@keyframes kbd-flash {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+    background: rgb(39 39 42);
+    color: rgb(228 228 231);
+  }
+  35% {
+    transform: scale(1.12);
+    box-shadow: 0 0 14px 2px rgb(190 242 100 / 0.6);
+    background: rgb(190 242 100 / 0.18);
+    color: rgb(190 242 100);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 transparent;
+    background: rgb(39 39 42);
+    color: rgb(228 228 231);
+  }
+}
+
+.flash {
+  animation: kbd-flash 380ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash {
+    animation: none;
+  }
+}

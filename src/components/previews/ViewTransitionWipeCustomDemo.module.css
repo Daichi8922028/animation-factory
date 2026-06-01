@@ -1,0 +1,35 @@
+/* view-transition-wipe-custom: 新スナップショット(vtw-stage)を clip-path で左→右にワイプ */
+
+.stage {
+  view-transition-name: vtw-stage;
+  width: 22rem;
+  height: 13rem;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.6);
+}
+
+::view-transition-old(vtw-stage) {
+  animation: none;
+}
+::view-transition-new(vtw-stage) {
+  animation: vtw-wipe 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes vtw-wipe {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(vtw-stage) {
+    animation: none;
+  }
+}

@@ -1,0 +1,47 @@
+/* input-focus-pop: :focus / :not(:placeholder-shown) でラベルが float */
+
+.field {
+  position: relative;
+  width: 18rem;
+}
+
+.input {
+  width: 100%;
+  padding: 20px 12px 8px;
+  border-radius: 8px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(9 9 11);
+  color: rgb(244 244 245);
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 180ms ease-out, border-color 180ms ease-out;
+}
+
+.label {
+  position: absolute;
+  left: 12px;
+  top: 15px;
+  font-size: 14px;
+  color: rgb(161 161 170);
+  transform-origin: left center;
+  transition: transform 180ms ease-out, color 180ms ease-out;
+  pointer-events: none;
+}
+
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
+  transform: translateY(-13px) scale(0.8);
+  color: rgb(190 242 100);
+}
+
+.input:focus {
+  border-color: rgb(190 242 100 / 0.6);
+  box-shadow: 0 0 0 2px rgb(190 242 100 / 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .label {
+    transition-duration: 0.01ms;
+  }
+}

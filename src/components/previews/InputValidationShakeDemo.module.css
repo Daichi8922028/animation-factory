@@ -1,0 +1,50 @@
+/* input-validation-shake: invalid クラスで translateX 振動 + 赤 border */
+
+.field {
+  width: 16rem;
+}
+
+.input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  background: rgb(9 9 11);
+  color: rgb(244 244 245);
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  outline: none;
+  transition: border-color 160ms ease-out;
+}
+
+.invalid .input {
+  border-color: #f87171;
+  animation: ivs-shake 380ms cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes ivs-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-6px);
+  }
+  40%,
+  80% {
+    transform: translateX(6px);
+  }
+}
+
+.err {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #fca5a5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invalid .input {
+    animation: none;
+  }
+}
