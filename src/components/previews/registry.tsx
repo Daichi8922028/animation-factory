@@ -68,6 +68,36 @@ import { ViewTransitionCardToDetailDemo } from "./ViewTransitionCardToDetailDemo
 import { ViewTransitionProgressiveDisclosureDemo } from "./ViewTransitionProgressiveDisclosureDemo";
 import { ViewTransitionDirectionalSlideDemo } from "./ViewTransitionDirectionalSlideDemo";
 import { ViewTransitionWipeCustomDemo } from "./ViewTransitionWipeCustomDemo";
+import { GsapScrollHorizontalDemo } from "./GsapScrollHorizontalDemo";
+import { GsapPinTextRevealDemo } from "./GsapPinTextRevealDemo";
+import { GsapScrubProgressDemo } from "./GsapScrubProgressDemo";
+import { GsapParallaxLayersDemo } from "./GsapParallaxLayersDemo";
+import { GsapBatchRevealDemo } from "./GsapBatchRevealDemo";
+import { GsapSplitTextStaggerDemo } from "./GsapSplitTextStaggerDemo";
+import { GsapFlipGridReorderDemo } from "./GsapFlipGridReorderDemo";
+import { GsapMorphSvgIconDemo } from "./GsapMorphSvgIconDemo";
+import { GsapDrawSvgPathDemo } from "./GsapDrawSvgPathDemo";
+import { GsapClipImageRevealDemo } from "./GsapClipImageRevealDemo";
+import { SvgProgressRingDemo } from "./SvgProgressRingDemo";
+import { SvgGooeyMergeDemo } from "./SvgGooeyMergeDemo";
+import { SvgBlobMorphDemo } from "./SvgBlobMorphDemo";
+import { SvgCheckboxTickDemo } from "./SvgCheckboxTickDemo";
+import { CanvasConfettiBurstDemo } from "./CanvasConfettiBurstDemo";
+import { CanvasParticleFieldDemo } from "./CanvasParticleFieldDemo";
+import { CssScrollSnapGalleryDemo } from "./CssScrollSnapGalleryDemo";
+import { CssScrollProgressBarDemo } from "./CssScrollProgressBarDemo";
+import { CssStickyGridRevealDemo } from "./CssStickyGridRevealDemo";
+import { CssStickyHeaderCollapseDemo } from "./CssStickyHeaderCollapseDemo";
+import { AnimeStaggerGridDemo } from "./AnimeStaggerGridDemo";
+import { AnimeSvgLineDrawDemo } from "./AnimeSvgLineDrawDemo";
+import { AnimeTextWaveDemo } from "./AnimeTextWaveDemo";
+import { MotionOnePressSpringDemo } from "./MotionOnePressSpringDemo";
+import { MotionOneScrollRevealDemo } from "./MotionOneScrollRevealDemo";
+import { LenisSmoothAnchorDemo } from "./LenisSmoothAnchorDemo";
+import { LenisParallaxScrollDemo } from "./LenisParallaxScrollDemo";
+import { WapiRippleClickDemo } from "./WapiRippleClickDemo";
+import { WapiStaggerMenuDemo } from "./WapiStaggerMenuDemo";
+import { WapiFlipCounterDemo } from "./WapiFlipCounterDemo";
 
 /**
  * id → プレビューコンポーネント のディスパッチ。
@@ -230,6 +260,66 @@ export function PreviewById({
       return <ViewTransitionDirectionalSlideDemo />;
     case "view-transition-wipe-custom":
       return <ViewTransitionWipeCustomDemo />;
+    case "gsap-scroll-horizontal":
+      return <GsapScrollHorizontalDemo />;
+    case "gsap-pin-text-reveal":
+      return <GsapPinTextRevealDemo />;
+    case "gsap-scrub-progress":
+      return <GsapScrubProgressDemo />;
+    case "gsap-parallax-layers":
+      return <GsapParallaxLayersDemo />;
+    case "gsap-batch-reveal":
+      return <GsapBatchRevealDemo />;
+    case "gsap-split-text-stagger":
+      return <GsapSplitTextStaggerDemo />;
+    case "gsap-flip-grid-reorder":
+      return <GsapFlipGridReorderDemo />;
+    case "gsap-morph-svg-icon":
+      return <GsapMorphSvgIconDemo />;
+    case "gsap-draw-svg-path":
+      return <GsapDrawSvgPathDemo />;
+    case "gsap-clip-image-reveal":
+      return <GsapClipImageRevealDemo />;
+    case "svg-progress-ring":
+      return <SvgProgressRingDemo />;
+    case "svg-gooey-merge":
+      return <SvgGooeyMergeDemo />;
+    case "svg-blob-morph":
+      return <SvgBlobMorphDemo />;
+    case "svg-checkbox-tick":
+      return <SvgCheckboxTickDemo />;
+    case "canvas-confetti-burst":
+      return <CanvasConfettiBurstDemo />;
+    case "canvas-particle-field":
+      return <CanvasParticleFieldDemo />;
+    case "css-scroll-snap-gallery":
+      return <CssScrollSnapGalleryDemo />;
+    case "css-scroll-progress-bar":
+      return <CssScrollProgressBarDemo />;
+    case "css-sticky-grid-reveal":
+      return <CssStickyGridRevealDemo />;
+    case "css-sticky-header-collapse":
+      return <CssStickyHeaderCollapseDemo />;
+    case "anime-stagger-grid":
+      return <AnimeStaggerGridDemo />;
+    case "anime-svg-line-draw":
+      return <AnimeSvgLineDrawDemo />;
+    case "anime-text-wave":
+      return <AnimeTextWaveDemo />;
+    case "motion-one-press-spring":
+      return <MotionOnePressSpringDemo />;
+    case "motion-one-scroll-reveal":
+      return <MotionOneScrollRevealDemo />;
+    case "lenis-smooth-anchor":
+      return <LenisSmoothAnchorDemo />;
+    case "lenis-parallax-scroll":
+      return <LenisParallaxScrollDemo />;
+    case "wapi-ripple-click":
+      return <WapiRippleClickDemo />;
+    case "wapi-stagger-menu":
+      return <WapiStaggerMenuDemo />;
+    case "wapi-flip-counter":
+      return <WapiFlipCounterDemo />;
     default:
       return null;
   }

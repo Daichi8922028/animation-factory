@@ -1,0 +1,74 @@
+/* css-sticky-grid-reveal: position: sticky で固定したグリッドを
+   animation-timeline: view() で順次 reveal / scale する。
+   @supports で対応・未対応・Reduce Motion を分岐する。 */
+
+@keyframes cell-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stage {
+  /* スクロール量を稼ぐ。固定中にセルが順次出る */
+  min-height: 220vh;
+}
+
+.grid {
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  min-height: 100vh;
+  align-content: center;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.cell {
+  /* 既定（未対応ブラウザ）では表示状態にフォールバック */
+  opacity: 1;
+  transform: none;
+}
+
+@supports (animation-timeline: view()) {
+  .cell {
+    animation: cell-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+  .cell:nth-child(2) {
+    animation-range: entry 8% cover 48%;
+  }
+  .cell:nth-child(3) {
+    animation-range: entry 16% cover 56%;
+  }
+  .cell:nth-child(4) {
+    animation-range: entry 24% cover 64%;
+  }
+  .cell:nth-child(5) {
+    animation-range: entry 32% cover 72%;
+  }
+  .cell:nth-child(6) {
+    animation-range: entry 40% cover 80%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hint {
+  color: rgb(161, 161, 170); /* zinc-400 */
+  font-size: 12px;
+}

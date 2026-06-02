@@ -18,6 +18,9 @@
 | gray-matter | 4.x | MIT |
 | lottie-react | 2.x | MIT |
 | @rive-app/react-canvas | 4.x | MIT |
+| animejs | 4.x | MIT |
+| @motionone/dom | 10.x | MIT |
+| lenis | 1.x | MIT |
 
 ## GSAP について
 
@@ -29,6 +32,8 @@ GSAP 3.13 以降は **GreenSock Standard "no charge" License**（<https://gsap.c
 - `.animation.md` 内の Tier B 実装サンプル（`gsap-scroll-pin` 等）も、利用方法のドキュメントであり GSAP 自体の再配布ではない
 
 利用者は自身のプロジェクトで `npm install gsap` し、GSAP 社の利用規約に従って使う。
+
+- かつて Club GreenSock 限定だったプラグイン（SplitText / Flip / DrawSVGPlugin / MorphSVGPlugin / Physics2DPlugin など）も、2024 末以降は同じ "no charge" ライセンスで `gsap` パッケージに同梱されている。v1.2 の `gsap-*` デモはこれらを `gsap/SplitText` 等のサブパスから import して利用する（再配布はしない）。
 
 ## アセット
 

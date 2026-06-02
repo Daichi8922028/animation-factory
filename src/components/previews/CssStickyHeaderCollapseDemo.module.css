@@ -1,0 +1,103 @@
+/* css-sticky-header-collapse: animation-timeline: scroll() で
+   sticky ヘッダの高さ・余白・ロゴサイズをスクロール進行に直結して縮める。
+   @supports で対応・未対応を、@media で Reduce Motion を分岐する。 */
+
+@keyframes header-collapse {
+  to {
+    height: 56px;
+    padding-block: 8px;
+  }
+}
+
+@keyframes logo-shrink {
+  to {
+    scale: 0.7;
+  }
+}
+
+@keyframes subtitle-fade {
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.scroller {
+  height: 460px;
+  overflow-y: auto;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.75rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 96px;
+  padding-inline: 1.25rem;
+  padding-block: 20px;
+  background: rgb(9 9 11 / 0.85); /* zinc-950 */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform-origin: left center;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: rgb(244 244 245); /* zinc-100 */
+}
+
+.dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 9999px;
+  background: #a3e635; /* lime-300 accent */
+}
+
+.subtitle {
+  font-size: 0.75rem;
+  color: rgb(161 161 170); /* zinc-400 */
+}
+
+/* 対応ブラウザ: scroll-timeline で進行を直結 */
+@supports (animation-timeline: scroll()) {
+  .header {
+    animation: header-collapse linear both;
+    animation-timeline: scroll(nearest block);
+    animation-range: 0 200px;
+  }
+  .logo {
+    animation: logo-shrink linear both;
+    animation-timeline: scroll(nearest block);
+    animation-range: 0 200px;
+  }
+  .subtitle {
+    animation: subtitle-fade linear both;
+    animation-timeline: scroll(nearest block);
+    animation-range: 0 120px;
+  }
+}
+
+/* Reduce Motion: 進行を止め、縮小状態は固定（レイアウトの跳ねを避ける） */
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .logo,
+  .subtitle {
+    animation: none;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: rgb(212 212 216); /* zinc-300 */
+}

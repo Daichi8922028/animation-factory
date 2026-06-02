@@ -1,0 +1,34 @@
+/* svg-gooey-merge: SVG filter(feGaussianBlur + feColorMatrix) の gooey で
+   移動する円が近づくと融合・離れると分裂するループ。transform のみ補間。 */
+
+@keyframes blob-a {
+  0%, 100% { transform: translateX(-30px); }
+  50%      { transform: translateX(10px); }
+}
+@keyframes blob-b {
+  0%, 100% { transform: translateX(30px); }
+  50%      { transform: translateX(-10px); }
+}
+@keyframes blob-c {
+  0%, 100% { transform: translate(0, -18px); }
+  50%      { transform: translate(0, 18px); }
+}
+@keyframes blob-d {
+  0%, 100% { transform: translate(-12px, 14px); }
+  50%      { transform: translate(12px, -14px); }
+}
+
+.blob {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.blobA { animation: blob-a 4s ease-in-out infinite; }
+.blobB { animation: blob-b 4s ease-in-out infinite; }
+.blobC { animation: blob-c 3.2s ease-in-out infinite; }
+.blobD { animation: blob-d 5s ease-in-out infinite; }
+
+/* Reduce Motion: アニメーションを止め静止配置で表示（装飾なので情報欠落なし） */
+.reduced .blob {
+  animation: none;
+}

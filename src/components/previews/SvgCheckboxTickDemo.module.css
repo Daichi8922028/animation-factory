@@ -1,0 +1,40 @@
+/* svg-checkbox-tick: 枠と tick を stroke-dashoffset で描く。
+   on/off は data-checked 属性で切り替える（デモは自動ループ）。 */
+
+.svg {
+  width: 96px;
+  height: 96px;
+  fill: none;
+  stroke: #71717a; /* zinc-500 */
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.box {
+  transition: stroke 280ms ease-in-out;
+}
+
+.tick {
+  /* pathLength=1 に正規化。1 隠して 0 で全部描く */
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 280ms ease-in-out, stroke 280ms ease-in-out;
+}
+
+/* on 状態 */
+.checked .box {
+  stroke: #a3e635; /* lime-300 */
+}
+
+.checked .tick {
+  stroke: #a3e635;
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tick,
+  .box {
+    transition: none;
+  }
+}

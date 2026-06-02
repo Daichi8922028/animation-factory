@@ -1,0 +1,68 @@
+/* css-scroll-snap-gallery: 横スクロールの scroll-snap ギャラリー。
+   各カードに view-timeline を貼り、自身がビューポート中央に来たときだけ拡大強調する。
+   @supports で対応・未対応・Reduce Motion を分岐する。JS アニメーションライブラリは不使用。 */
+
+.track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* 中央寄せのための左右パディング。先頭/末尾カードも中央に止まれる */
+  padding: 1.5rem clamp(1rem, 38%, 40%);
+  /* スクロールバーは控えめに */
+  scrollbar-width: thin;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: center;
+  /* デフォルト（未対応想定）は等倍・全表示 */
+  transform: none;
+  opacity: 1;
+  transition: none;
+}
+
+@supports (animation-timeline: view(inline)) {
+  .card {
+    /* 各カード自身を横方向のビュータイムラインとして登録 */
+    view-timeline-name: --card;
+    view-timeline-axis: inline;
+    animation: card-emphasis linear both;
+    animation-timeline: --card;
+    /* 進入〜退出の全域でイージング。中央（50%）でピークになる */
+    animation-range: cover 0% cover 100%;
+  }
+}
+
+@keyframes card-emphasis {
+  0% {
+    transform: scale(0.86);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.86);
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+  .card {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+.hint {
+  color: rgb(161, 161, 170); /* zinc-400 */
+  font-size: 12px;
+}

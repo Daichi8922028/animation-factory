@@ -1,0 +1,47 @@
+/* css-scroll-progress-bar: scroll-timeline (scroll()) で読書進捗バーを JS ゼロで実装。
+   @supports で対応・未対応を分岐し、Reduce Motion でも進捗の意味は失わない。 */
+
+@keyframes grow-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 4px;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, #a3e635, #65a30d);
+  /* デフォルト（未対応想定）はフルバー表示。進捗の存在自体は伝わる。 */
+  transform: scaleX(1);
+}
+
+@supports (animation-timeline: scroll()) {
+  .bar {
+    animation: grow-progress linear both;
+    /* ルートスクローラの縦進行に直結。JS スクロールハンドラ不要。 */
+    animation-timeline: scroll(root block);
+    transform: scaleX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar {
+    /* バー自体は進捗インジケータとして意味があるため残すが、
+       連続アニメは抑え、控えめな静的表示にする。 */
+    animation: none;
+    transform: scaleX(1);
+    opacity: 0.6;
+  }
+}
+
+.section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hint {
+  color: rgb(161, 161, 170); /* zinc-400 */
+  font-size: 12px;
+}
